@@ -45,6 +45,7 @@ const user2 = {
    console.log(updatedUser);
 }); */
 
+/*
 http.delete('https://ccm-backend.herokuapp.com/usuario/6', function(error, nothing) {
    if(!error) {
       console.log(`${nothing} User deleted`);
@@ -52,3 +53,5 @@ http.delete('https://ccm-backend.herokuapp.com/usuario/6', function(error, nothi
       console.log(error);
    }
 })
+
+*/
