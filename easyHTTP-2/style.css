@@ -30,6 +30,10 @@ h1 {
    margin-bottom: 2rem;
 }
 
+small {
+   color: var(--pink-color);
+}
+
 /* UTILITY */
 
 .button {
@@ -53,9 +57,9 @@ h1 {
 
 .container {
    background-color: var(--dark-color);
-   width: min(90vw, 1000px);
+   width: min(90vw, 800px);
    margin: 0 auto;
-   padding: 1.5rem 2rem;
+   padding: 1.5rem 3rem;
    border-radius: 10px;
    min-height: 600px;
 }
@@ -63,7 +67,7 @@ h1 {
 /* REQUEST */
 
 .container #request form {
-   width: 80%;
+   width: 100%;
    margin: 0 auto;
    display: grid;
    grid-template-columns: repeat(2, 1fr);
@@ -84,6 +88,12 @@ h1 {
    display: block;
    margin-bottom: 0.1rem;
    
+}
+
+.container #request form div:first-child div label {
+   font-size: 1.3rem;
+   font-weight: bold;
+   color: var(--purple-color);
 }
 
 .container #request form > div:nth-child(2) div {
@@ -111,4 +121,18 @@ h1 {
    
    display: none;
    margin: 0 auto;
+}
+
+
+@media (max-width: 620px) {
+   .container #request form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 370px;
+      /* background-color: red; */
+   }
+   small {
+      margin-top: 1rem;
+   }
 }

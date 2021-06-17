@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>New Easy HTTP</title>
+</head>
+<body>
+
+   <div class="container">
+      <h1>Easy HTTP consuming CCM API</h1>
+      <div id="request">
+         <form action="">
+            <div>
+               <div>
+                  <label for="method">Choose the HTTP method</label>
+                  <select name="method" id="method">
+                     <option value="get">GET</option>
+                     <option value="post">POST</option>
+                     <option value="put">PUT</option>
+                     <option value="delete">DELETE</option>
+                  </select>
+               </div>
+               <small>The route will be Usuario</small>
+               
+            </div>
+            <div>
+               <div>
+                  <label for="id">ID</label>
+                  <input type="number" id="id" name="id">
+               </div>
+               <div>
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name">
+               </div>
+               <div>
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email">
+               </div>
+               <div>
+                  <label for="password">Password</label>
+                  <input type="text" name="password" id="password">
+               </div>
+            </div>
+            <input id="submit" type="submit" value="Send Request" class="button">
+         </form>
+      </div>
+      <div id="response">
+         <img src="./images/loading-gif.gif" alt="Loading gif">
+         <table>
+            <thead>
+               
+            </thead>
+            <tbody>
+               
+            </tbody>
+         </table>
+      </div>
+   </div>
+
+   <script src="easyhttp2.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>

@@ -84,12 +84,20 @@ class EasyHTTP {
          fetch(url, {
             method: 'DELETE',
             headers: {
-               'Content-type': 'application/json'
+               'Content-Type': 'application/json'
             }
          })
-         .then(response => response.json())
-         .then(() => resolve('User deleted successfully'))
-         .catch(error => reject(`Error`));
+         .then(response => {
+            if(response.ok) {
+               return resolve('User deleted successfully');
+            } else {
+               return Promise.reject({
+                  status: response.status,
+                  statusText: response.statusText
+               });
+            }
+         })
+         .catch(error => reject(`Error ${error.status} ${error.statusText}`));
       });
    }
 }
