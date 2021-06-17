@@ -12,10 +12,10 @@ const http = new EasyHTTP();
 function runApp(e) {
 
    const method = select.value;
-   const id = idInput.value;
-   const name = nameInput.value;
-   const email = emailInput.value;
-   const password = passwordInput.value;
+   const id = checkField(idInput.value);
+   const name = checkField(nameInput.value);
+   const email = checkField(emailInput.value);
+   const password = checkField(passwordInput.value);
 
    if(method === 'get') {
       
@@ -56,3 +56,11 @@ function runApp(e) {
    e.preventDefault();
 }
 
+
+function checkField(field) {
+   if(field === "") {
+      return null;
+   } else {
+      return field;
+   }
+}

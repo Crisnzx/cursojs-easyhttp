@@ -16,9 +16,14 @@ class EasyHTTP {
 
    async get(url) {
       const response = await fetch(url);
-      const resData = await response.json();
-      return resData;
+      if (response.ok) {
+         const resData = await response.json();
+         return resData;
 
+      } else {
+         throw new Error(`Error ${response.status} ${response.statusText}`);
+
+      }
    }
 
    async post(url, data) {
@@ -31,8 +36,14 @@ class EasyHTTP {
          body: JSON.stringify(data)
       });
 
-      const resData = await response.json();
-      return resData;
+      if (response.ok) {
+         const resData = await response.json();
+         return resData;
+
+      } else {
+         throw new Error(`Error ${response.status} ${response.statusText}`);
+      }
+
    }
 
    async put(url, data) {
@@ -45,22 +56,30 @@ class EasyHTTP {
          body: JSON.stringify(data)
       });
 
-      const resData = await response.json();
-      return resData;
+      if (response.ok) {
+         const resData = await response.json();
+         return resData;
+      } else {
+         throw new Error(`Error ${response.status} ${response.statusText}`);
+      }
 
    }
 
    async delete(url) {
 
-         const response = await fetch(url, {
-            method: 'DELETE',
-            headers: {
-               'Content-Type': 'application/json'
-            }
-         })
+      const response = await fetch(url, {
+         method: 'DELETE',
+         headers: {
+            'Content-Type': 'application/json'
+         }
+      })
 
-         const resData = 'User deleted successfully';
-         return resData;
+      if (response.ok) {
+         return 'User deleted successfully';
+      } else {
+         throw new Error(`Error ${response.status} ${response.statusText}`);
+      }
+
 
    }
 }
